@@ -9,7 +9,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MapViewController: UIViewController {
+final class MapViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var startTrackingButton: UIButton!
@@ -136,6 +136,7 @@ extension MapViewController: MKMapViewDelegate {
         if annotation is MKUserLocation {
             return nil
         }
+        
         let identifier = "LocationAnnotation"
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
         if annotationView == nil {
@@ -144,6 +145,7 @@ extension MapViewController: MKMapViewDelegate {
         } else {
             annotationView?.annotation = annotation
         }
+        
         return annotationView
     }
 }

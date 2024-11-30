@@ -13,7 +13,7 @@ protocol MapViewModelDelegate: AnyObject {
     func didUpdateMarkers()
 }
 
-class MapViewModel {
+final class MapViewModel {
     
     private let geocoder = CLGeocoder()
     private(set) var markers: [Markers] = CurrentUserDefaults.markers
